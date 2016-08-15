@@ -1,0 +1,17 @@
+<?php
+
+/**
+* @file
+* Update script for the blogpost feature
+*/
+
+/**
+* Implements hook_update_N()
+* Deletes boolean field from blogpost content type
+*/
+
+function blogpost_update_7000() {
+  $instance = field_info_instance('node', 'boolean', 'blogpost');
+  field_delete_instance($instance, TRUE);
+  field_purge_batch(1);       //deletes from DB without cron run
+}

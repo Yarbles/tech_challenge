@@ -1,0 +1,14 @@
+name = blogpost
+description = Configures blog post content type
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = list
+dependencies[] = options
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_boolean
+features[field_instance][] = node-blog_post-body
+features[field_instance][] = node-blog_post-field_boolean
+features[node][] = blog_post
